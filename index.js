@@ -9,7 +9,11 @@ const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
 
 
-app.use(cors());
+app.use(
+  cors({
+    origin:["http://localhost:3000","http://mern-twitter-clone-app.onrender.com"],
+    }
+  ));
 app.use(express.json());
 
 const uri = `mongodb+srv://${username}:${password}@cluster0.svceux9.mongodb.net/?retryWrites=true&w=majority`;
